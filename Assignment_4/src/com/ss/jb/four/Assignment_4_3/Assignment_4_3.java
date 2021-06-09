@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 public class Assignment_4_3 {
 	public static ArrayList<Integer> array = new ArrayList<Integer>();
-
-	public static void main(String[] args) {
+	public static int wait = 0;
+	
+	public Assignment_4_3(int wait) {
+		Assignment_4_3.wait = wait;
+		
 		Producer producer = new Producer();
 		Thread p = new Thread(producer);
 
@@ -24,7 +27,7 @@ public class Assignment_4_3 {
 	// wait 20 ms then consume a resource
 	public static int useFromArray() {
 		try {
-			Thread.sleep(10);
+			Thread.sleep(wait);
 
 			int consumable = array.get(0);
 			array.remove(0);

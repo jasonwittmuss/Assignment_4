@@ -12,7 +12,7 @@ public class Line {
 	
 	public Double getSlope() {
 		// Check if vertical
-		if(x1 == x2) {
+		if(x1.equals(x2)) {
 			return Double.POSITIVE_INFINITY;
 		}
 		// Rise over run
